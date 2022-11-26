@@ -1,13 +1,13 @@
 package com.codecool.hogwartshouses.service;
 
-import com.codecool.hogwartshouses.service.DAO.RoomDAO;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.codecool.hogwartshouses.model.Room;
 
-@Service
-public class RoomService {
+import java.util.Set;
 
-    @Autowired
-    private RoomDAO roomDAO;
-
+public interface RoomService {
+    public Set<Room> getAllRooms();
+    public void addRoom(Room room);
+    public Room getRoomById(Long id);
+    public void deleteRoom(Long id);
+    public void updateRoom(Long id, Room room);
 }
