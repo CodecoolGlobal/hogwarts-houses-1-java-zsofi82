@@ -11,9 +11,13 @@ import java.util.Set;
 
 @Controller
 @RequestMapping("rooms")
-public class RoomServiceController {
+public class RoomController {
     @Autowired
     protected RoomService roomService;
+
+    public RoomController(RoomService roomService) {
+        this.roomService = roomService;
+    }
 
     // produces = {
     //        MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE, MediaType.TEXT_XML_VALUE }

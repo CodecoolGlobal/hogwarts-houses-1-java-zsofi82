@@ -23,5 +23,6 @@ public class RoomCreator {
         roomMemory.save(room1);
         roomMemory.save(room2);
         roomMemory.save(room3);
+        System.out.println(roomMemory);
     }
 }
