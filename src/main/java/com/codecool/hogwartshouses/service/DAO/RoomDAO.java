@@ -9,6 +9,5 @@ public interface RoomDAO {
     void save(Room room);
     Room getById(Long id);
     void deleteRoomById(Long id);
-
     void updateRoomById(Long id, Room room);
 }
