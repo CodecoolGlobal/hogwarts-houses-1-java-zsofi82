@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 @Controller
@@ -24,7 +26,8 @@ public class RoomController {
     @GetMapping()
     public String rooms(Model model) {
         Set<Room> rooms = roomService.getAllRooms();
-        model.addAttribute("rooms", rooms);
+        List<Room> orderedRooms = new ArrayList<>(rooms);
+        model.addAttribute("rooms", orderedRooms);
         return "rooms";
     }
 
