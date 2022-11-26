@@ -1,9 +1,7 @@
 package com.codecool.hogwartshouses.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import java.util.Set;
 
 //@Data is a convenient shortcut annotation that creates simple POJO’s (Plain Old Java Object)
 // @ToString
@@ -15,9 +13,9 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class Room {
-    Long id;
+    private Long id;
+    private int capacity;
+    @Singular
+    private Set<Student> residents;
 
-    public Long getId() {
-        return id;
-    }
 }
