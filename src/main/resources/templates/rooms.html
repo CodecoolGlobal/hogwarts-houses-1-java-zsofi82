@@ -6,8 +6,9 @@
     <title>Rooms</title>
 </head>
 <body>
-  <ul th:each="room: ${rooms}">
-    <li th:text="${room.id}"></li>
-  </ul>
+    <h1>Rooms:</h1>
+    <ul th:each="room: ${rooms}">
+        <li th:text="${room.id}"></li>
+    </ul>
 </body>
 </html>
