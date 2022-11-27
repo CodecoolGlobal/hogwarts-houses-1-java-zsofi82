@@ -10,5 +10,8 @@
     <ul th:each="room: ${rooms}">
         <li th:text="${room.id}"></li>
     </ul>
+    <form action="/rooms" method="post">
+        <button type="submit">Add new room</button>
+    </form>
 </body>
 </html>

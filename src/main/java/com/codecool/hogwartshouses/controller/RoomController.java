@@ -7,9 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @Controller
 @RequestMapping("rooms")
@@ -26,15 +24,14 @@ public class RoomController {
     @GetMapping()
     public String rooms(Model model) {
         Set<Room> rooms = roomService.getAllRooms();
-        List<Room> orderedRooms = new ArrayList<>(rooms);
-        model.addAttribute("rooms", orderedRooms);
+        model.addAttribute("rooms", rooms);
         return "rooms";
     }
 
     @PostMapping
-    public String addRoom(@RequestBody Room room) {
+    public String addRoom(@ModelAttribute("room") Room room) {
         roomService.addRoom(room);
-        return "rooms";
+        return "redirect:";
     }
 
     @GetMapping("/{roomId}")
