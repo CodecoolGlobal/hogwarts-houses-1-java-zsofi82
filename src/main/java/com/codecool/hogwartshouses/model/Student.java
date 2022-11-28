@@ -15,5 +15,5 @@ import java.util.UUID;
 public class Student {
     private UUID id;
     private String name;
-    PetType petType;
+    private PetType petType;
 }

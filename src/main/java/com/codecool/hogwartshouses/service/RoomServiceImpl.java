@@ -1,7 +1,8 @@
 package com.codecool.hogwartshouses.service;
 
 import com.codecool.hogwartshouses.model.Room;
-import com.codecool.hogwartshouses.service.DAO.RoomDAO;
+import com.codecool.hogwartshouses.model.Student;
+import com.codecool.hogwartshouses.repository.RoomDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,10 +11,9 @@ import java.util.Set;
 @Service
 public class RoomServiceImpl implements RoomService{
 
-    private final RoomDAO roomDAO;
-
+    private final RoomDAO<Room> roomDAO;
     @Autowired
-    public RoomServiceImpl(RoomDAO roomDAO) {
+    public RoomServiceImpl(RoomDAO<Room> roomDAO) {
         this.roomDAO = roomDAO;
     }
 
@@ -21,19 +21,29 @@ public class RoomServiceImpl implements RoomService{
         return roomDAO.getAllRooms();
     }
 
-    public void addRoom(Room room) {
-        roomDAO.save(room);
+    public void createRoom(Room room) {
+        roomDAO.createRoom(room);
     }
 
-    public Room getRoomById(Long id) {
-        return roomDAO.getById(id);
+    @Override
+    public void assignStudentToRoom(Room room, Student student) {
+        Set<Student> residents = room.getResidents();
+        if (residents.size() < room.getCapacity()) residents.add(student);
+        else throw new ArithmeticException("The room is full");
+        room.setResidents(residents);
     }
 
-    public void deleteRoom(Long id) {
-        roomDAO.deleteRoomById(id);
+    public Room getRoomById(Long roomID) {
+        return roomDAO.getById(roomID);
     }
 
-    public void updateRoom(Long id, Room room) {
-        roomDAO.updateRoomById(id, room);
+    public void deleteRoom(Long roomId) {
+        roomDAO.deleteRoomById(roomId);
     }
+
+    public void updateRoom(Long roomId, Room newRoom) {
+        roomDAO.updateRoomById(roomId, newRoom);
+    }
+
+
 }
