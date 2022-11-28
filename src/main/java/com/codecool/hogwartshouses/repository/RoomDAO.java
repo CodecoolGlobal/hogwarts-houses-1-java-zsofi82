@@ -1,7 +1,5 @@
 package com.codecool.hogwartshouses.repository;
 
-import com.codecool.hogwartshouses.model.Room;
-
 import java.util.Set;
 
 // RoomDAO will be ObjectRepository<T>
