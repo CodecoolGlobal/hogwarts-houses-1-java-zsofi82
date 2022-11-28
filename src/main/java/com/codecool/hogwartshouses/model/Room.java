@@ -1,6 +1,9 @@
 package com.codecool.hogwartshouses.model;
 
+import com.codecool.hogwartshouses.model.types.HouseType;
 import lombok.*;
+
+import java.util.HashSet;
 import java.util.Set;
 
 //@Data is a convenient shortcut annotation that creates simple POJO’s (Plain Old Java Object)
@@ -15,7 +18,8 @@ import java.util.Set;
 public class Room {
     private Long id;
     private int capacity;
+    private HouseType houseType;
     @Singular
-    private Set<Student> residents;
+    private Set<Student> residents = new HashSet<>();
 
 }
