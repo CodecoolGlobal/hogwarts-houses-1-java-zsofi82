@@ -12,9 +12,10 @@ import java.util.*;
 @Controller
 @RequestMapping("rooms")
 public class RoomController {
-    @Autowired
+
     protected RoomService roomService;
 
+    @Autowired
     public RoomController(RoomService roomService) {
         this.roomService = roomService;
     }
@@ -29,8 +30,8 @@ public class RoomController {
     }
 
     @PostMapping
-    public String addRoom(@ModelAttribute("room") Room room) {
-        roomService.addRoom(room);
+    public String createRoom(@ModelAttribute("room") Room room) {
+        roomService.createRoom(room);
         return "redirect:";
     }
 
