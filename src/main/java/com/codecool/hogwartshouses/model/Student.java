@@ -13,7 +13,6 @@ import java.util.UUID;
 @AllArgsConstructor
 @Builder
 public class Student {
-    private UUID id;
     private String name;
     private PetType petType;
 }
