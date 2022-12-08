@@ -3,7 +3,6 @@ package com.codecool.hogwartshouses.model;
 import com.codecool.hogwartshouses.model.types.HouseType;
 import lombok.*;
 
-import java.util.HashSet;
 import java.util.Set;
 
 //@Data is a convenient shortcut annotation that creates simple POJO’s (Plain Old Java Object)

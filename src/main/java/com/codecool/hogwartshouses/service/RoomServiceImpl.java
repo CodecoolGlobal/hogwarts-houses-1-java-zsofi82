@@ -11,13 +11,11 @@ import java.util.Set;
 
 @Service
 public class RoomServiceImpl implements RoomService{
-
     private final RoomDAO<Room> roomDAO;
     @Autowired
     public RoomServiceImpl(RoomDAO<Room> roomDAO) {
         this.roomDAO = roomDAO;
     }
-
     @Override
     public List<Room> getAllRooms() {
         return roomDAO.getAllRooms();
@@ -26,7 +24,6 @@ public class RoomServiceImpl implements RoomService{
     public void createRoom(Room room) {
         roomDAO.createRoom(room);
     }
-
     @Override
     public void assignStudentToRoom(Room room, Student student) {
         Set<Student> residents = room.getResidents();
@@ -58,6 +55,5 @@ public class RoomServiceImpl implements RoomService{
     public List<Room> getAllRoomsWithNoCatOrOwlOwners() {
         return roomDAO.getAllRoomsWithNoCatOrOwlOwners();
     }
-
 
 }

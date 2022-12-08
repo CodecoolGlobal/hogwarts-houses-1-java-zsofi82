@@ -1,7 +1,6 @@
 package com.codecool.hogwartshouses.repository;
 
 import java.util.List;
-import java.util.Set;
 
 // RoomDAO will be ObjectRepository<T>
 public interface RoomDAO<T> {
@@ -10,8 +9,6 @@ public interface RoomDAO<T> {
     T getById(Long id);
     void deleteRoomById(Long id);
     void updateRoomById(Long id, T t);
-
     List<T> getAllAvailableRooms();
-
     List<T> getAllRoomsWithNoCatOrOwlOwners();
 }

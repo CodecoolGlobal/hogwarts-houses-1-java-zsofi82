@@ -1,7 +1,6 @@
 package com.codecool.hogwartshouses.repository;
 
 import com.codecool.hogwartshouses.model.Room;
-import com.codecool.hogwartshouses.model.Student;
 import com.codecool.hogwartshouses.model.types.PetType;
 import org.springframework.stereotype.Repository;
 
@@ -21,17 +20,14 @@ public class RoomMemory implements RoomDAO<Room> {
         this.rooms = new HashMap<>();
         this.idCounter = 1L;
     }
-
     @Override
     public List<Room> getAllRooms() {
         return new ArrayList<>(rooms.values());
     }
-
     @Override
     public void createRoom(Room room) {
         rooms.put(idCounter++, room);
     }
-
     @Override
     public Room getById(Long roomId) {
         return rooms.get(roomId);
