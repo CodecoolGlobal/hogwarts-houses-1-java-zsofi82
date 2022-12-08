@@ -10,4 +10,6 @@ public interface RoomDAO<T> {
     T getById(Long id);
     void deleteRoomById(Long id);
     void updateRoomById(Long id, T t);
+
+    List<T> getAllAvailableRooms();
 }

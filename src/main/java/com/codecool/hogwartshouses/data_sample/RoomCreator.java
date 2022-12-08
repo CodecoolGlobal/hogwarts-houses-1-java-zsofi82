@@ -28,12 +28,16 @@ public class RoomCreator {
         Student Neville = Student.builder().name("Neville Longbottom").petType(PetType.TOAD).build();
 
         Room room1 = Room.builder().capacity(2).houseType(HouseType.GRYFFINDOR).resident(Luna).build();
-        Room room2 = Room.builder().capacity(2).houseType(HouseType.HUFFLEPUFF).resident(Neville).build();
+        Room room2 = Room.builder().capacity(2).houseType(HouseType.HUFFLEPUFF).build();
         Room room3 = Room.builder().capacity(2).houseType(HouseType.RAVENCLAW).resident(Hermione).build();
         Room room4 = Room.builder().capacity(2).houseType(HouseType.SLYTHERIN).resident(Draco).build();
+        Room room5 = Room.builder().capacity(2).houseType(HouseType.SLYTHERIN).build();
+        Room room6 = Room.builder().capacity(2).houseType(HouseType.HUFFLEPUFF).build();
         roomMemory.createRoom(room1);
         roomMemory.createRoom(room2);
         roomMemory.createRoom(room3);
         roomMemory.createRoom(room4);
+        roomMemory.createRoom(room5);
+        roomMemory.createRoom(room6);
     }
 }

@@ -51,4 +51,9 @@ public class RoomController {
         roomService.updateRoom(roomId, room);
         return room;
     }
+
+    @GetMapping("/available")
+    public List<Room> getAllAvailableRooms() {
+        return roomService.getAllAvailableRooms();
+    }
 }

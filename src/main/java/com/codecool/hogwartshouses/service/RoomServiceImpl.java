@@ -49,5 +49,10 @@ public class RoomServiceImpl implements RoomService{
         roomDAO.updateRoomById(roomId, newRoom);
     }
 
+    @Override
+    public List<Room> getAllAvailableRooms() {
+        return roomDAO.getAllAvailableRooms();
+    }
+
 
 }
