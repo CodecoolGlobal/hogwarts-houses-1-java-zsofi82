@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
 
-@Controller
+@RestController
 @RequestMapping("rooms")
 public class RoomController {
 
@@ -23,16 +23,16 @@ public class RoomController {
     // produces = {
     //        MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE, MediaType.TEXT_XML_VALUE }
     @GetMapping()
-    public String rooms(Model model) {
-        Set<Room> rooms = roomService.getAllRooms();
+    public List<Room> rooms(Model model) {
+        List<Room> rooms = roomService.getAllRooms();
         model.addAttribute("rooms", rooms);
-        return "rooms";
+        return rooms;
     }
 
     @PostMapping
-    public String createRoom(@ModelAttribute("room") Room room) {
+    public Room createRoom(@ModelAttribute("room") Room room) {
         roomService.createRoom(room);
-        return "redirect:";
+        return room;
     }
 
     @GetMapping("/{roomId}")
@@ -47,8 +47,8 @@ public class RoomController {
     }
 
     @PutMapping("{roomId}")
-    public String updateRoom(@PathVariable Long roomId, @RequestBody Room room) {
+    public Room updateRoom(@PathVariable Long roomId, @RequestBody Room room) {
         roomService.updateRoom(roomId, room);
-        return "rooms";
+        return room;
     }
 }
