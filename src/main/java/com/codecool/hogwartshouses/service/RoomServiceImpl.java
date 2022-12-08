@@ -6,6 +6,7 @@ import com.codecool.hogwartshouses.repository.RoomDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Set;
 
 @Service
@@ -17,10 +18,11 @@ public class RoomServiceImpl implements RoomService{
         this.roomDAO = roomDAO;
     }
 
-    public Set<Room> getAllRooms() {
+    @Override
+    public List<Room> getAllRooms() {
         return roomDAO.getAllRooms();
     }
-
+    @Override
     public void createRoom(Room room) {
         roomDAO.createRoom(room);
     }
@@ -32,15 +34,17 @@ public class RoomServiceImpl implements RoomService{
         else throw new ArithmeticException("The room is full");
         room.setResidents(residents);
     }
-
+    @Override
     public Room getRoomById(Long roomID) {
         return roomDAO.getById(roomID);
     }
 
+    @Override
     public void deleteRoom(Long roomId) {
         roomDAO.deleteRoomById(roomId);
     }
 
+    @Override
     public void updateRoom(Long roomId, Room newRoom) {
         roomDAO.updateRoomById(roomId, newRoom);
     }
