@@ -15,4 +15,6 @@ public interface RoomService {
     void updateRoom(Long roomId, Room newRoom);
 
     List<Room> getAllAvailableRooms();
+
+    List<Room> getAllRoomsWithNoCatOrOwlOwners();
 }

@@ -12,4 +12,6 @@ public interface RoomDAO<T> {
     void updateRoomById(Long id, T t);
 
     List<T> getAllAvailableRooms();
+
+    List<T> getAllRoomsWithNoCatOrOwlOwners();
 }

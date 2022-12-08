@@ -56,4 +56,9 @@ public class RoomController {
     public List<Room> getAllAvailableRooms() {
         return roomService.getAllAvailableRooms();
     }
+
+    @GetMapping("/rat-owners")
+    public List<Room> getAllRoomsWithNoCatOrOwlOwners() {
+        return roomService.getAllRoomsWithNoCatOrOwlOwners();
+    }
 }

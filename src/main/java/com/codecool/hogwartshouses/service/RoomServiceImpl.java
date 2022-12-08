@@ -54,5 +54,10 @@ public class RoomServiceImpl implements RoomService{
         return roomDAO.getAllAvailableRooms();
     }
 
+    @Override
+    public List<Room> getAllRoomsWithNoCatOrOwlOwners() {
+        return roomDAO.getAllRoomsWithNoCatOrOwlOwners();
+    }
+
 
 }
