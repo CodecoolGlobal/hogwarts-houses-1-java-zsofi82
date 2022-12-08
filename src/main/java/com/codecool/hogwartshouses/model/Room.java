@@ -16,10 +16,9 @@ import java.util.Set;
 @AllArgsConstructor
 @Builder
 public class Room {
-    private Long id;
     private int capacity;
     private HouseType houseType;
     @Singular
-    private Set<Student> residents = new HashSet<>();
+    private Set<Student> residents;
 
 }
