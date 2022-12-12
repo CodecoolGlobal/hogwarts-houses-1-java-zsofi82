@@ -46,14 +46,14 @@ public class RoomMemory implements RoomDAO<Room> {
     @Override
     public List<Room> getAllAvailableRooms() {
         return rooms.values().stream()
-                .filter(room -> room.getResidents().isEmpty())
+                .filter(room -> room.getResidents() == null || room.getResidents().isEmpty())
                 .collect(Collectors.toList());
     }
 
     @Override
     public List<Room> getAllRoomsWithNoCatOrOwlOwners() {
         return rooms.values().stream()
-                .filter(room -> room.getResidents()
+                .filter(room -> room.getResidents() == null || room.getResidents()
                         .stream()
                         .noneMatch(resident -> resident.getPetType().equals(PetType.CAT) || resident.getPetType().equals(PetType.OWL)))
                 .collect(Collectors.toList());
