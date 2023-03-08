@@ -9,8 +9,12 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @WebMvcTest(RoomController.class)
@@ -27,8 +31,10 @@ public class WebLayerTest {
                 .get("/rooms")
                 .accept(MediaType.APPLICATION_JSON))
                 .andDo(print())
-                .andExpect(status().isOk());
-
+                .andExpect(status().isOk())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.rooms").exists())
+                .andExpect(MockMvcResultMatchers.jsonPath("$.rooms[*].roomId").isNotEmpty());
+//
 //        when(roomService.getAllRooms()).thenReturn({room1, room2, room3});
 //        this.mockMvc.perform(get("rooms"))
 //                .andDo(print())
