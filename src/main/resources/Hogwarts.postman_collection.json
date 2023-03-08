@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "39ccef91-90d2-480f-99c7-ef9e35133a63",
+		"name": "Hogwarts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24035524"
+	},
+	"item": [
+		{
+			"name": "Get all rooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rooms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get room by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/{{rooms}}/{{roomId}}",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"{{rooms}}",
+						"{{roomId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new room",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/rooms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"rooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete room by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/{{rooms}}/4",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"{{rooms}}",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update room by id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"capacity\":3,\"houseType\":null,\"residents\":null}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{localhost}}/{{rooms}}/3",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"{{rooms}}",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all empty rooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/{{rooms}}/available",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"{{rooms}}",
+						"available"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get rooms with no cat or owl owners",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{localhost}}/{{rooms}}/rat-owners",
+					"host": [
+						"{{localhost}}"
+					],
+					"path": [
+						"{{rooms}}",
+						"rat-owners"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "roomId",
+			"value": "2"
+		},
+		{
+			"key": "localhost",
+			"value": "http://localhost:8080"
+		},
+		{
+			"key": "rooms",
+			"value": "rooms"
+		}
+	]
+}
