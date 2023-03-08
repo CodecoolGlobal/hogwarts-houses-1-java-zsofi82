@@ -21,5 +21,5 @@ git clone git@github.com:CodecoolGlobal/hogwarts-houses-1-java-zsofi82.git
 While the service is running, go to "localhost:8080" in your browser to see the main page.
 
 ## Postman link
-The project is exported into a JSON file. To import the Postman collection of the project please use the below link:
+The project is exported into a JSON file. To import the Postman collection of the project please use the below file:
 [Hogwarts.postman_collection.json](https://github.com/CodecoolGlobal/hogwarts-houses-1-java-zsofi82/blob/development/Hogwarts.postman_collection.json)
