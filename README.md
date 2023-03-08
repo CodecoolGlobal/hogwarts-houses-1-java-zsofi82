@@ -1,6 +1,10 @@
 # Hogwarts Houses / Spring Boot project with Web APIs
 
 ## General info
+
+With this project we can control the rooms of the famous school (Hogwarts School of Witchcraft and Wizardry) from Harry Potter series.
+We are able to add new room (with given Student, capacity, houseType), change, delete, find all, find by ID, get empty rooms or get rooms with no cat owners...
+
 This is a Spring Boot project using DAO pattern to performing CRUD operations.
 
 What I have learnt with this project:
